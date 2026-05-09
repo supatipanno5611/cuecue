@@ -13,6 +13,72 @@
 
 지원하는 음성 파일 확장자는 `.aac`, `.flac`, `.m4a`, `.mp3`, `.ogg`, `.wav`, `.wma`다.
 
+## 설치
+
+### Python 설치
+
+1. [python.org/downloads](https://www.python.org/downloads/)에서 최신 버전을 내려받는다.
+2. 설치 중 **Add Python to PATH** 항목에 체크한다.
+3. 설치가 끝나면 새 PowerShell을 열고 아래 명령으로 확인한다.
+
+```powershell
+python --version
+```
+
+`Python x.x.x`가 표시되면 된다.
+
+### 가상 환경 만들기
+
+`cuecue.py`가 있는 폴더에서 아래 명령을 실행한다.
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+프롬프트 앞에 `(.venv)`가 붙으면 가상 환경이 활성화된 것이다.
+
+### faster-whisper 설치
+
+가상 환경이 활성화된 상태에서 아래 명령을 실행한다.
+
+```powershell
+pip install faster-whisper
+```
+
+### ffmpeg 설치
+
+1. [ffmpeg.org/download.html](https://ffmpeg.org/download.html)에서 Windows 빌드를 내려받는다.
+2. 압축을 풀고 `bin` 폴더 안의 `ffmpeg.exe`와 `ffprobe.exe`를 PATH에 있는 폴더에 넣는다.
+3. 새 PowerShell을 열고 아래 명령으로 확인한다.
+
+```powershell
+ffmpeg -version
+```
+
+### cuecue 명령으로 실행하기
+
+`cuecue.py`가 있는 폴더에 `cuecue.cmd` 파일을 만들고 아래 내용을 넣는다.
+
+```bat
+@echo off
+"%~dp0.venv\Scripts\python.exe" "%~dp0cuecue.py" %*
+```
+
+그 다음 `cuecue.cmd`가 있는 폴더를 사용자 PATH에 추가한다.
+
+1. 시작 메뉴에서 **환경 변수 편집**을 검색해 연다.
+2. **사용자 변수** 항목에서 `Path`를 선택하고 **편집**을 누른다.
+3. **새로 만들기**를 누르고 `cuecue.cmd`가 있는 폴더 경로를 입력한다. 예: `C:\Users\name\cuecue`
+4. 확인을 누르고 창을 닫는다.
+5. 새 PowerShell을 열고 아래 명령으로 확인한다.
+
+```powershell
+cuecue
+```
+
+이후부터는 가상 환경 활성화 없이 어느 폴더에서든 `cuecue`만 입력하면 된다. `.cmd` 파일이 가상 환경의 Python을 직접 참조하기 때문이다.
+
 ## 준비
 
 1. 전사할 음성 파일을 `input` 폴더에 넣는다.
