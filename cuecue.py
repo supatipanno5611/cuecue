@@ -18,8 +18,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-AUDIO_LIBRARY_DIR = Path(r"여기에 음성 파일들이 들어 있는 폴더 경로를 넣어주세요")
-OUTPUT_DIR = Path(r"여기에 전사된 파일들이 출력될 폴더 경로를 넣어주세요")
+AUDIO_LIBRARY_DIR = Path(r"C:\input")
+OUTPUT_DIR = Path(r"C:\output")
 TEMP_CHUNKS_DIR = Path(__file__).resolve().parent / "temp_chunks"
 AUDIO_EXTENSIONS = (".aac", ".flac", ".m4a", ".mp3", ".ogg", ".wav", ".wma")
 DEFAULT_CHUNK_MINUTES = 15
