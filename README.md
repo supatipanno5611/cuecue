@@ -337,8 +337,8 @@ Please enter a positive number or all.
 Chunk 2 completed (2/6 done)
 Started: 00:12:30
 Completed: 00:18:42
-Chunk elapsed: 00:06:12
-File elapsed: 00:12:20
+Chunk elapsed: 6m 12s
+File elapsed: 12m 20s
 ```
 
 한국어 뜻:
