@@ -16,9 +16,8 @@
 ## 준비
 
 1. 전사할 음성 파일을 `input` 폴더에 넣는다.
-2. cuecue.py에서 input 폴더와 output 폴더의 경로를 지정한다.
-3. 새 PowerShell 창을 연다.
-4. 아래 명령을 실행한다.
+2. 새 PowerShell 창을 연다.
+3. 아래 명령을 실행한다.
 
 ```powershell
 cuecue
