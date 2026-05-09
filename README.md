@@ -48,9 +48,13 @@ pip install faster-whisper
 
 ### ffmpeg 설치
 
-1. [ffmpeg.org/download.html](https://ffmpeg.org/download.html)에서 Windows 빌드를 내려받는다.
-2. 압축을 풀고 `bin` 폴더 안의 `ffmpeg.exe`와 `ffprobe.exe`를 PATH에 있는 폴더에 넣는다.
-3. 새 PowerShell을 열고 아래 명령으로 확인한다.
+1. ffmpeg.org/download.html에서 Windows 빌드를 내려받는다. Essentials 빌드를 받으면 된다.
+2. 내려받은 zip 파일의 압축을 풀면 ffmpeg-버전-essentials_build 같은 이름의 폴더가 생긴다. 이 폴더 전체를 C:\ffmpeg로 이동하거나 이름을 바꾼다. 이후 경로는 C:\ffmpeg\bin\ffmpeg.exe가 된다.
+3. 시작 메뉴에서 환경 변수 편집을 검색해 연다.
+4. 사용자 변수 항목에서 Path를 선택하고 편집을 누른다.
+5. 새로 만들기를 누르고 C:\ffmpeg\bin을 입력한다.
+6. 확인을 누르고 창을 닫는다.
+7. 새 PowerShell을 열고 아래 명령으로 확인한다.
 
 ```powershell
 ffmpeg -version
@@ -222,7 +226,7 @@ Select:
 
 영어 음성을 전사하는 설정이다. 다른 언어를 자동으로 고르는 도구가 아니라, 현재 코드는 `language: en`으로 고정되어 있다.
 
-최종 출력은 기본적으로 `C:\Desana\output` 폴더에 저장된다.
+최종 출력은 기본적으로 `C:\output` 폴더에 저장된다.
 
 - 최종 병합 파일: `example.md`
 - 같은 이름이 이미 있으면: `example (1).md`, `example (2).md`, ...
@@ -418,7 +422,7 @@ Merge them into one Markdown file now? (y/n):
 병합이 끝나면 다음처럼 최종 파일 위치가 표시된다.
 
 ```text
-Merged output: C:\Desana\output\example.md
+Merged output: C:\output\example.md
 ```
 
 한국어 뜻:
